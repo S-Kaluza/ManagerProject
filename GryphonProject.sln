@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GryphonProject", "GryphonProject\GryphonProject.csproj", "{B645BFBD-9A4E-46DB-97F8-3C073278F14B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0A94541E-4D77-444F-9787-83F64EB7AF68}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjDependencyInjection", "ProjDependencyInjection\ProjDependencyInjection.csproj", "{8A239D9A-F271-4D06-9A3B-640FFB23A3CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{495A6055-1BDC-41BA-9732-E1FB93CBE07F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{72A3EF3F-9CCD-4FFD-A999-5A789998B459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TokenService", "TokenService\TokenService.csproj", "{9CECC702-82B6-4825-9D42-647D7B3258AD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B645BFBD-9A4E-46DB-97F8-3C073278F14B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B645BFBD-9A4E-46DB-97F8-3C073278F14B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B645BFBD-9A4E-46DB-97F8-3C073278F14B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B645BFBD-9A4E-46DB-97F8-3C073278F14B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A239D9A-F271-4D06-9A3B-640FFB23A3CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A239D9A-F271-4D06-9A3B-640FFB23A3CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A239D9A-F271-4D06-9A3B-640FFB23A3CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A239D9A-F271-4D06-9A3B-640FFB23A3CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{495A6055-1BDC-41BA-9732-E1FB93CBE07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{495A6055-1BDC-41BA-9732-E1FB93CBE07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{495A6055-1BDC-41BA-9732-E1FB93CBE07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{495A6055-1BDC-41BA-9732-E1FB93CBE07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72A3EF3F-9CCD-4FFD-A999-5A789998B459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72A3EF3F-9CCD-4FFD-A999-5A789998B459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72A3EF3F-9CCD-4FFD-A999-5A789998B459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72A3EF3F-9CCD-4FFD-A999-5A789998B459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CECC702-82B6-4825-9D42-647D7B3258AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CECC702-82B6-4825-9D42-647D7B3258AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CECC702-82B6-4825-9D42-647D7B3258AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CECC702-82B6-4825-9D42-647D7B3258AD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

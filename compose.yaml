@@ -1,0 +1,7 @@
+﻿services:
+  gryphonproject:
+    image: gryphonproject
+    build:
+      context: .
+      dockerfile: GryphonProject/Dockerfile
+
