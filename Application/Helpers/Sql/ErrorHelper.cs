@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using Application.Domains;
 using Application.Enums;
-using ProjDependencyInjection.Extensions;
+using Application.Extensions;
 using Microsoft.Extensions.Logging;
 
 namespace Application.Helpers.Sql;

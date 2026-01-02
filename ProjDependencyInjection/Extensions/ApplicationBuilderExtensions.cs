@@ -12,7 +12,7 @@ public static class ApplicationBuilderExtensions
         if (isDevelopment)
         {
             app.UseDeveloperExceptionPage();
-            app.UseSwagger();
+            app.UseSwaggerConfig();
         }
 
         app.UseCorsConfig(securitySettings);

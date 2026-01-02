@@ -36,7 +36,7 @@ public static class SwaggerConfigExtension
         });
     }
 
-    public static void UseSwaggerConfig(this IApplicationBuilder app) // Zmieniłem nazwę metody, aby uniknąć konfliktu nazw
+    public static void UseSwaggerConfig(this IApplicationBuilder app)
     {
         app.UseSwagger();
 
