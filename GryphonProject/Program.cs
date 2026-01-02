@@ -1,7 +1,7 @@
 using System.Reflection;
 using Application.Models.Settings;
-using ProjDependencyInjections.Extensions;
-using ProjDependencyInjections.Mapster;
+using ProjDependencyInjection.Extensions;
+using ProjDependencyInjection.Mapster;
 using GryphonProject.EndpointDefinitions;
 
 var builder = WebApplication.CreateBuilder(args);

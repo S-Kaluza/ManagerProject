@@ -1,8 +1,7 @@
 ﻿using System.Reflection;
-using Application.Models.Constants;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.OpenApi.Models;
+using Microsoft.OpenApi;
 
 namespace ProjDependencyInjection.Extensions;
 
@@ -12,47 +11,39 @@ public static class SwaggerConfigExtension
     {
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = projectName, Version = "v1" });
+            // 1. Podstawowa konfiguracja dokumentu
+            c.SwaggerDoc("v1", new OpenApiInfo() { Title = projectName, Version = "v1" });
+
             var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-            c.AddSecurityDefinition(TokenNames.BEARER, new OpenApiSecurityScheme
+            if (File.Exists(xmlPath))
             {
-                Description = @"JWT Authorization header using the Bearer scheme.
-                      Enter 'Bearer' and then your token in the text input below.
-                      Example: 'Bearer 12345abcdef'",
+                c.IncludeXmlComments(xmlPath);
+            }
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                Description = @"JWT Authorization header using the Bearer scheme. 
+                                Enter 'Bearer' [space] and then your token in the text input below.
+                                Example: 'Bearer 12345abcdef'",
                 Name = "Authorization",
                 In = ParameterLocation.Header,
                 Type = SecuritySchemeType.ApiKey,
-                Scheme = TokenNames.BEARER
+                Scheme = "Bearer"
             });
-            c.AddSecurityRequirement(new OpenApiSecurityRequirement
-            {
-                {
-                    new OpenApiSecurityScheme
-                    {
-                        Reference = new OpenApiReference
-                        {
-                            Type = ReferenceType.SecurityScheme,
-                            Id = TokenNames.BEARER
-                        },
-                        Scheme = TokenNames.UOATH2,
-                        Name = TokenNames.BEARER,
-                        In = ParameterLocation.Header
-                    },
-                    new List<string>()
-                }
-            });
+
+            // 4. Wymagania bezpieczeństwa (Security Requirement) - Twój snippet
+            c.AddSecurityRequirement(document => new() { [new OpenApiSecuritySchemeReference("Bearer", document)] = [] });
         });
     }
-    
-    public static void UseSwagger(this IApplicationBuilder app)
+
+    public static void UseSwaggerConfig(this IApplicationBuilder app) // Zmieniłem nazwę metody, aby uniknąć konfliktu nazw
     {
-        SwaggerBuilderExtensions.UseSwagger(app);
+        app.UseSwagger();
 
         app.UseSwaggerUI(c =>
         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "API");
-            c.RoutePrefix = string.Empty;
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "API v1");
+            c.RoutePrefix = string.Empty; // Swagger dostępny pod głównym adresem URL
         });
     }
 }

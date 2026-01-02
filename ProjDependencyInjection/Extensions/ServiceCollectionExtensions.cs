@@ -3,13 +3,12 @@ using Application.General;
 using Application.Models.Entity;
 using Application.Models.Entity;
 using DataAccess;
-using MedievalCityBuilder_ProjDependencyInjections.ConfigureOptions;
+using ProjDependencyInjection.ConfigureOptions;
 using TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ProjDependencyInjection.ConfigureOptions;
 
 namespace ProjDependencyInjection.Extensions;
 
