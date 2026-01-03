@@ -4,7 +4,7 @@ using Npgsql;
 
 namespace GryphonProject.EndpointDefinitions;
 
-public static class MedievalCityBuilderExtension
+public static class GryphonProjectExtension
 {
     public static void RegisterServices(this WebApplicationBuilder builder)
     {

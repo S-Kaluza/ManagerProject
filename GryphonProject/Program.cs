@@ -21,6 +21,6 @@ app.ConfigureCommonPipeline(isDevelopment, mapster!, securitySettings!);
 
 app.UseHttpsRedirection();
 
-app.RegisterEndpointDefinitions();
+app.RegisterEndpoints();
 
 app.Run();

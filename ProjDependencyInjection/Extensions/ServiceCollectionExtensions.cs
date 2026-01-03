@@ -3,6 +3,9 @@ using Application.General;
 using Application.Models.Entity;
 using Application.Models.Entity;
 using DataAccess;
+using Domain.Auth.Commands.AccountLoginHandler;
+using Domain.Auth.Commands.CreateAccountHandler;
+using Domain.Auth.Commands.SendConfirmationEmail;
 using ProjDependencyInjection.ConfigureOptions;
 using TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -46,6 +49,10 @@ public static class ServiceCollectionExtensions
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
             .AddJwtBearer();
+        
+        service.AddTransient<ICreateAccountHandler, CreateAccountHandler>();
+        service.AddTransient<IAccountLoginHandler, AccountLoginHandler>();
+        service.AddTransient<ISendConfirmationEmailRequestHandler, SendConfirmationEmailRequestHandler>();
 
         service.AddSettingsConfig(configuration);
 

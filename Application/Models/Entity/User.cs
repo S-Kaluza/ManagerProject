@@ -7,8 +7,10 @@ namespace Application.Models.Entity;
 
 public class User : IdentityUser<int>
 {
-    public string UserName { get; set; }
+    public string NormalizedEmail { get; set; }
     public string Email { get; set; }
+    public string Name { get; set; }
+    public string Surname { get; set; }
     public DateTime CreationDate { get; set; }
     public StatusEnum Status { get; set; }
     public int StatusId { get; set; }
