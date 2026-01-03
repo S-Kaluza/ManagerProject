@@ -18,7 +18,7 @@ public abstract class EndpointBase<T> : IEndpoints
         _webApplication = webApplication;
         Logger = webApplication.Services.GetRequiredService<ILogger<T>>();
         string endpointName = typeof(T).Name;
-        BaseUrl = endpointName![..^"Endpoint".Length].ToLower();
+        BaseUrl = endpointName![..^"Endpoints".Length].ToLower();
     }
 
     protected RouteGroupBuilder CreateEndpointGroup()
