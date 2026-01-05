@@ -35,6 +35,7 @@ public class AccountLoginHandler : IAccountLoginHandler
     public async Task<AccountLoginResponse> Handle(AccountLoginRequest request)
     {
         request.Validate();
+        
 
         var normalizedEmailFromRequest = _userManager.NormalizeEmail(request.Email);
 

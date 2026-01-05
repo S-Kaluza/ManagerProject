@@ -5,6 +5,8 @@ using Domain.Auth.Commands.AccountLoginHandler;
 using Domain.Auth.Commands.AccountLoginHandler.Request;
 using Domain.Auth.Commands.CreateAccountHandler;
 using Domain.Auth.Commands.CreateAccountHandler.Request;
+using Domain.Auth.Profile.Query.GetUserByIdHandler;
+using Domain.Auth.Profile.Query.GetUserByIdHandler.Request;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GryphonProject.EndpointDefinitions;
@@ -27,10 +29,16 @@ public class AuthEndpoints: EndpointBase<AuthEndpoints>
         return Results.Ok(result);
     }
 
-    private async Task<IResult> GetProfile(ClaimsPrincipal claimsPrincipal)
+    private async Task<IResult> GetProfile(ClaimsPrincipal claimsPrincipal, IGetUserByIdHandler getUserByIdHandler)
     {
         var currentUserId = claimsPrincipal.GetUserIdFromClaims();
-        return Results.Ok(currentUserId);
+        var getUserByIdRequest = new GetUserByIdRequest()
+        {
+            CurrentUserId = currentUserId,
+            UserId = currentUserId
+        };
+        var results = await getUserByIdHandler.Handle(getUserByIdRequest);
+        return Results.Ok(results);
     }
 
     private async Task<IResult> RegisterUser([FromBody] CreateAccountRequest request, ICreateAccountHandler createAccountHandler)

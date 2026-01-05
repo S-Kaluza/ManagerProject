@@ -6,6 +6,7 @@ using DataAccess;
 using Domain.Auth.Commands.AccountLoginHandler;
 using Domain.Auth.Commands.CreateAccountHandler;
 using Domain.Auth.Commands.SendConfirmationEmail;
+using Domain.Auth.Profile.Query.GetUserByIdHandler;
 using ProjDependencyInjection.ConfigureOptions;
 using TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -53,6 +54,7 @@ public static class ServiceCollectionExtensions
         service.AddTransient<ICreateAccountHandler, CreateAccountHandler>();
         service.AddTransient<IAccountLoginHandler, AccountLoginHandler>();
         service.AddTransient<ISendConfirmationEmailRequestHandler, SendConfirmationEmailRequestHandler>();
+        service.AddTransient<IGetUserByIdHandler, GetUserByIdHandler>();
 
         service.AddSettingsConfig(configuration);
 

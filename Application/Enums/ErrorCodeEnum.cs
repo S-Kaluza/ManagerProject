@@ -17,6 +17,8 @@ public enum ErrorCodeEnum
     [Description("Token not generated")] TokenNotGenerated = -6,
     
     [Description("Email not sent")] EmailNotSent = -7,
+    
+    [Description("Not permission")] NotPermission = -8,
 
     [Description("General error - contact with administrator and try again later")]
     GeneralError = -500
