@@ -7,6 +7,10 @@ using Domain.Auth.Commands.AccountLoginHandler;
 using Domain.Auth.Commands.CreateAccountHandler;
 using Domain.Auth.Commands.SendConfirmationEmail;
 using Domain.Auth.Profile.Query.GetUserByIdHandler;
+using Domain.Companies.Commands.CreateCompanyHandler;
+using Domain.Companies.Commands.DeleteCompanyHandler;
+using Domain.Companies.Commands.UpadateCompanyHandler;
+using Domain.Companies.Query.GetCompanyHandler;
 using ProjDependencyInjection.ConfigureOptions;
 using TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -55,6 +59,10 @@ public static class ServiceCollectionExtensions
         service.AddTransient<IAccountLoginHandler, AccountLoginHandler>();
         service.AddTransient<ISendConfirmationEmailRequestHandler, SendConfirmationEmailRequestHandler>();
         service.AddTransient<IGetUserByIdHandler, GetUserByIdHandler>();
+        service.AddTransient<ICreateCompanyHandler, CreateCompanyHandler>();
+        service.AddTransient<IGetCompanyHandler, GetCompanyHandler>();
+        service.AddTransient<IDeleteCompanyHandler, DeleteCompanyHandler>();
+        service.AddTransient<IUpdateCompanyHandler, UpdateCompanyHandler>();
 
         service.AddSettingsConfig(configuration);
 

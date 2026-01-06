@@ -3,6 +3,7 @@ using System;
 using DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260105190524_AddTeamsAndCompany")]
+    partial class AddTeamsAndCompany
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -56,19 +59,19 @@ namespace DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            ConcurrencyStamp = "d7b389b1-d3e6-48bd-8b5a-96d295859e81",
+                            ConcurrencyStamp = "07ce5a26-7b49-4f06-9b7f-df73dc601282",
                             Name = "SuperAdmin"
                         },
                         new
                         {
                             Id = 2,
-                            ConcurrencyStamp = "daa9e4a8-e2da-4213-b01b-af6dd482bac6",
+                            ConcurrencyStamp = "12ca6047-5d1f-47d2-a478-421ed4c9d49b",
                             Name = "Admin"
                         },
                         new
                         {
                             Id = 3,
-                            ConcurrencyStamp = "062455d7-1085-4b5a-b94e-6db2e8491a38",
+                            ConcurrencyStamp = "0cedc04a-5aaa-4468-9d89-b9d46315f690",
                             Name = "User"
                         });
                 });
@@ -117,9 +120,6 @@ namespace DataAccess.Migrations
                         .HasColumnType("integer");
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .IsRequired()

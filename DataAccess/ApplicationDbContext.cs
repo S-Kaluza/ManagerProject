@@ -15,6 +15,8 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
     public DbSet<User> Users { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<Status> Status { get; set; }
+    public DbSet<Team> Teams { get; set; }
+    public DbSet<Company> Companies { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

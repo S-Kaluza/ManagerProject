@@ -19,6 +19,10 @@ public enum ErrorCodeEnum
     [Description("Email not sent")] EmailNotSent = -7,
     
     [Description("Not permission")] NotPermission = -8,
+    
+    [Description("Company already exists")] CompanyAlreadyExists = -11,
+    
+    [Description("Company not found")] CompanyNotFound = -12,
 
     [Description("General error - contact with administrator and try again later")]
     GeneralError = -500
