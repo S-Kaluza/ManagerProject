@@ -1,5 +1,3 @@
-using System.Text;
-using System.Text.Encodings.Web;
 using Application.Domains;
 using Application.Enums;
 using Application.Extensions;
@@ -10,6 +8,7 @@ using DataAccess;
 using Domain.Auth.Commands.SendConfirmationEmail.Request;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
+using Task = System.Threading.Tasks.Task;
 
 namespace Domain.Auth.Commands.SendConfirmationEmail;
 

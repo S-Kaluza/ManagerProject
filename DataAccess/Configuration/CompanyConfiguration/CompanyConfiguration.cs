@@ -16,5 +16,8 @@ public class CompanyConfiguration : IEntityTypeConfiguration<Company>
         builder.HasMany(x => x.Users)
             .WithOne(x => x.Company)
             .HasForeignKey(x => x.CompanyId);
+        builder.HasMany(x => x.Tasks)
+            .WithOne(x => x.Company)
+            .HasForeignKey(x => x.CompanyId);
     }
 }

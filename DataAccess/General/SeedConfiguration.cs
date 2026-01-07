@@ -10,5 +10,6 @@ public static class SeedConfiguration
     {
         modelBuilder.Entity<Status>().HasData(StatusSeed.Seed());
         modelBuilder.Entity<Role>().HasData(RoleSeed.Seed());
+        modelBuilder.Entity<TasksStatus>().HasData(TasksStatusSeed.Seed());
     }
 }

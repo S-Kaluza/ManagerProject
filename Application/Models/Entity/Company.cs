@@ -7,4 +7,5 @@ public class Company
     public string? Description { get; set; }
     public IEnumerable<Team> Teams { get; set; }
     public IEnumerable<User> Users { get; set; }
+    public IEnumerable<Task> Tasks { get; set; }
 }

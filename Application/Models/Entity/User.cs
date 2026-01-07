@@ -20,4 +20,5 @@ public class User : IdentityUser<int>
     public int? TeamId { get; set; }
     public Company? Company { get; set; }
     public int? CompanyId { get; set; }
+    public IEnumerable<Task> Tasks { get; set; }
 }

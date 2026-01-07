@@ -23,6 +23,8 @@ public enum ErrorCodeEnum
     [Description("Company already exists")] CompanyAlreadyExists = -11,
     
     [Description("Company not found")] CompanyNotFound = -12,
+    
+    [Description("Task not found")] TaskNotFound = -21,
 
     [Description("General error - contact with administrator and try again later")]
     GeneralError = -500

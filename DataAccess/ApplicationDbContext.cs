@@ -3,6 +3,7 @@ using Application.Models.Entity;
 using DataAccess.General;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Task = Application.Models.Entity.Task;
 
 namespace DataAccess;
 
@@ -17,6 +18,8 @@ public class ApplicationDbContext : IdentityDbContext<User, Role, int>
     public DbSet<Status> Status { get; set; }
     public DbSet<Team> Teams { get; set; }
     public DbSet<Company> Companies { get; set; }
+    public DbSet<TasksStatus> TasksStatuses { get; set; }
+    public DbSet<Task> Tasks { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

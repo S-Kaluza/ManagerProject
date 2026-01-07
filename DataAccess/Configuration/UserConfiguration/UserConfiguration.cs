@@ -22,5 +22,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasOne(x => x.Status)
             .WithMany(x => x.Users)
             .HasForeignKey(x => x.StatusId);
+        builder.HasMany(x => x.Tasks)
+            .WithMany(x => x.Users);
+        
     }
 }
