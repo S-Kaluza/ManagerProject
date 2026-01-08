@@ -9,9 +9,8 @@ public class TasksStatusesConfiguration : IEntityTypeConfiguration<Task>
 {
     public void Configure(EntityTypeBuilder<Task> builder)
     {
-        builder.ToTable("TasksStatuses");
+        builder.ToTable("Tasks");
         builder.HasKey(x => x.Id);
-        builder.HasIndex(x => x.Name).IsUnique();
         builder.HasMany(x => x.Users)
             .WithMany(x => x.Tasks);
         builder.HasOne(x => x.Company)
