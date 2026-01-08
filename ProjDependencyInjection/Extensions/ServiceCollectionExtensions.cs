@@ -11,6 +11,19 @@ using Domain.Companies.Commands.CreateCompanyHandler;
 using Domain.Companies.Commands.DeleteCompanyHandler;
 using Domain.Companies.Commands.UpadateCompanyHandler;
 using Domain.Companies.Query.GetCompanyHandler;
+using Domain.Tasks.Commands.CreateTaskHandler;
+using Domain.Tasks.Commands.DeleteTaskHandler;
+using Domain.Tasks.Commands.UpdateTaskHandler;
+using Domain.Tasks.Queries.GetTaskByIdHandler;
+using Domain.Tasks.Queries.GetTasksByCompanyIdHandler;
+using Domain.Tasks.Queries.GetTasksByTeamIdHandler;
+using Domain.Tasks.Queries.GetTasksByUserIdHandler;
+using Domain.Teams.Commands.CreateTeamHandler;
+using Domain.Teams.Commands.DeleteTeamByIdHandler;
+using Domain.Teams.Commands.InviteUserToTeamHandler;
+using Domain.Teams.Commands.UpdateTeamHandler;
+using Domain.Teams.Queries.GetTeamByIdHandler;
+using Domain.Teams.Queries.GetTeamsByCompanyIdHandler;
 using ProjDependencyInjection.ConfigureOptions;
 using TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -54,15 +67,34 @@ public static class ServiceCollectionExtensions
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
             .AddJwtBearer();
-        
+        //Auth services
         service.AddTransient<ICreateAccountHandler, CreateAccountHandler>();
         service.AddTransient<IAccountLoginHandler, AccountLoginHandler>();
         service.AddTransient<ISendConfirmationEmailRequestHandler, SendConfirmationEmailRequestHandler>();
         service.AddTransient<IGetUserByIdHandler, GetUserByIdHandler>();
+        
+        //Company services
         service.AddTransient<ICreateCompanyHandler, CreateCompanyHandler>();
         service.AddTransient<IGetCompanyHandler, GetCompanyHandler>();
         service.AddTransient<IDeleteCompanyHandler, DeleteCompanyHandler>();
         service.AddTransient<IUpdateCompanyHandler, UpdateCompanyHandler>();
+        
+        //Task services
+        service.AddTransient<ICreateTaskHandler, CreateTaskHandler>();
+        service.AddTransient<IDeleteTaskHandler, DeleteTaskHandler>();
+        service.AddTransient<IUpdateTaskHandler, UpdateTaskHandler>();
+        service.AddTransient<IGetTaskByIdHandler, GetTaskByIdHandler>();
+        service.AddTransient<IGetTasksByCompanyIdHandler, GetTasksByCompanyIdHandler>();
+        service.AddTransient<IGetTasksByTeamIdHandler, GetTasksByTeamIdHandler>();
+        service.AddTransient<IGetTasksByUserIdHandler, GetTasksByUserIdHandler>();
+
+        //Team services
+        service.AddTransient<ICreateTeamHandler, CreateTeamHandler>();
+        service.AddTransient<IDeleteTeamHandler, DeleteTeamHandler>();
+        service.AddTransient<IUpdateTeamHandler, UpdateTeamHandler>();
+        service.AddTransient<IGetTeamByIdHandler, GetTeamByIdHandler>();
+        service.AddTransient<IGetTeamsByCompanyIdHandler, GetTeamsByCompanyIdHandler>();
+        service.AddTransient<IInviteUserToTeamHandler, InviteUserToTeamHandler>();
 
         service.AddSettingsConfig(configuration);
 

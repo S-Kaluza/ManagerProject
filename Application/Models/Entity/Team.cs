@@ -6,5 +6,15 @@ public class Team
     public string Name { get; set; }
     public Company Company { get; set; }
     public int CompanyId { get; set; }
-    public IEnumerable<User> Users { get; set; }
+    private readonly List<User> _users = new();
+    public IEnumerable<User> Users => _users;
+    public IEnumerable<Task> Tasks { get; set; }
+
+    public void AddMember(User user)
+    {
+        if (!_users.Contains(user))
+        {
+            _users.Add(user);
+        }
+    }
 }

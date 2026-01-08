@@ -12,4 +12,6 @@ public class Task
     public IEnumerable<User>? Users { get; set; }
     public int CompanyId { get; set; }
     public Company Company { get; set; }
+    public Team Team { get; set; }
+    public int TeamId { get; set; }
 }

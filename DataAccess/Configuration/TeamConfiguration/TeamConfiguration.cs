@@ -13,5 +13,12 @@ public class TeamConfiguration : IEntityTypeConfiguration<Team>
         builder.HasOne(x => x.Company)
             .WithMany(x => x.Teams)
             .HasForeignKey(x => x.CompanyId);
+        builder.HasMany(x => x.Users)
+            .WithOne(x => x.Team)
+            .HasForeignKey(x => x.TeamId);
+        builder.HasMany(x => x.Tasks)
+            .WithOne(x => x.Team)
+            .HasForeignKey(x => x.TeamId);
+        
     }
 }

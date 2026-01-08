@@ -20,13 +20,13 @@ public class DeleteTaskHandler : IDeleteTaskHandler
         request.Validate();
 
         var currentUser = await _context.Users.FirstOrDefaultAsync(x =>
-                              x.Id == request.currentUserId && x.StatusId == (int)StatusEnum.Active &&
+                              x.Id == request.CurrentUserId && x.StatusId == (int)StatusEnum.Active &&
                               x.RolesId == (int)RolesEnum.Admin)
                           ?? throw new DomainException(ErrorCodeEnum.NotPermission,
                               ErrorCodeEnum.NotPermission.GetDescription());
 
         var task = await _context.Tasks.FirstOrDefaultAsync(x =>
-                       x.Id == request.taskId && x.CompanyId == currentUser.CompanyId)
+                       x.Id == request.TaskId && x.CompanyId == currentUser.CompanyId)
                    ?? throw new DomainException(ErrorCodeEnum.TaskNotFound,
                        ErrorCodeEnum.TaskNotFound.GetDescription());
 

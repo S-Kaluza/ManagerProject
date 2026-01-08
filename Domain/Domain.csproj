@@ -24,11 +24,4 @@
       </PackageReference>
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Tasks\Queries\GetTasksByCompanyIdHandler\" />
-      <Folder Include="Tasks\Queries\GetTaskByIdHandler\" />
-      <Folder Include="Tasks\Queries\GetTasksByTeamIdHandler\" />
-      <Folder Include="Tasks\Queries\GetTasksByUserIdHandler\" />
-    </ItemGroup>
-
 </Project>

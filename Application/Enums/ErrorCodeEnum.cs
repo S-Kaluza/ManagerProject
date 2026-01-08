@@ -25,6 +25,14 @@ public enum ErrorCodeEnum
     [Description("Company not found")] CompanyNotFound = -12,
     
     [Description("Task not found")] TaskNotFound = -21,
+    
+    [Description("Task already exists")] TaskAlreadyExists = -22,
+    
+    [Description("User already assigned to task")] UserAlreadyAssignedToTask = -23,
+    
+    [Description("Team not found")] TeamNotFound = -31,
+    
+    [Description("User already assigned to team")] UserAlreadyAssignedToTeam = -32,
 
     [Description("General error - contact with administrator and try again later")]
     GeneralError = -500

@@ -1,15 +1,15 @@
 using Application.Domains;
 
-namespace Domain.Tasks.Commands.DeleteTaskHandler.Request;
+namespace Domain.Tasks.Queries.GetTasksByCompanyIdHandler.Request;
 
-public class DeleteTaskRequest
+public class GetTasksByCompanyIdRequest
 {
+    public int CompanyId { get; set; }
     public int CurrentUserId { get; set; }
-    public int TaskId { get; set; }
     
     public void Validate()
     {
-        var validator = new DeleteTaskRequestValidator();
+        var validator = new GetTasksByCompanyIdRequestValidator();
         var validationResult = validator.Validate(this);
         if (validationResult.Errors.Count > 0)
         {
